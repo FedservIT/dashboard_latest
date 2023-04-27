@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-DashBoard</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" href="dashboard.html">
+                Dashboard
+            </a>
+        </div>
+        <div class="template-title">
+            <h2> BigCallMangement</h2>
+        </div>
+        <hr>
+
+        <div class="explore-form-row">
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">URL</label>
+                    <input type="text" class="input-ctrl" id="urldepartment">
+                </div>
+            </div>
+
+            <div class="answer-ctrl">
+                <div class="check-box ">
+                    <div class="toggle-btn">
+                        <input id="status" type="checkbox" name="answertypeq_1">
+                        <label for="status"></label>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="explore-form-col span-2">
+                <div class="button-row ">
+                    <button class="btn-2" id="bigcallsubmit" onclick="bigcalladd()">Submit</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      <script src="../script/bigcall.js" type="text/javascript" defer></script>
+    </div>
+</body>
+</html>

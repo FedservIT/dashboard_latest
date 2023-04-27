@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-Explore</title>
+    <style>
+        .modal-widgrt{
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal-widgrt.show-c{
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+        }
+    </style>
+
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" href="dashboard.html">
+                Dashboard
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <a class="breadcrumbs-list" href="explore.html">
+                Explore
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <span class="breadcrumbs-list active" id="path">
+
+                    </span>
+        </div>
+        <div class="template-title">
+            <h2>Explore Details</h2>
+        </div>
+        <hr>
+        <div class="explore-form-row mb-15">
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Page Name</label>
+                    <input type="text" class="input-ctrl" id="pageName">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Deeplink Url</label>
+                    <input type="text" class="input-ctrl" id="deepLink">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Change Image</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="imagUrl" onchange="uploadImage1()" >
+                    </div>
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">ImageURL</label>
+                    <input type="text" class="input-ctrl" id="imgURL">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Is Internal</label>
+                    <select name="isInternal" id="isInternal"  class="select-ctrl">
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Menu Type</label>
+                    <select name="MenuType" id="menuType" class="select-ctrl">
+                        <option value="internal">internal</option>
+                        <option value="external">external</option>
+                    </select>
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Text</label>
+                    <input type="text" class="input-ctrl" id="text">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Tile Type</label>
+                    <select name="MenuType" id="tileType" class="select-ctrl">
+                        <option value="html">html</option>
+                        <option value="pdf">pdf</option>
+                        <option value="jpeg">jpeg</option>
+                        <option value="url">url</option>
+                        <option value="internal">internal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="explore-form-col span-2">
+                <div class="button-row">
+                    <button class="btn-1">Cancel</button>
+                    <button class="btn-2" id="form-submit">Submit</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="template-head" id="template-head">
+            <!--added dynamically-->
+        </div>
+
+        <div class="explore-card-row mb-15" id="explore-card-row">
+            <!--added dynamically-->
+        </div>
+
+        <div class="template-head" id="template-headcon">
+            <!--added dynamically-->
+        </div>
+
+        <div class="explore-card-row mb-15" id="explore-card-rowcon">
+            <!--added dynamically-->
+        </div>
+    </div>
+    <div class="modal-widgrt" id="modal-widgrt">
+        <div class="modal-row">
+            <h2>Deleting</h2>
+            <p>Do you want to delete Document?</p>
+            <div class="button-row">
+                <button class="btn-1 active" id="closeButton1">Close</button>
+                <button class="btn-2 active" id="deleteButton1">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="../script/explore_single.js" type="text/javascript" defer></script>
+    <script src="../script/contest.js" type="text/javascript" defer></script>
+
+</div>
+</body>
+</html>

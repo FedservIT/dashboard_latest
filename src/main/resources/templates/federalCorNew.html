@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FederalCorner Details</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" th:href="@{/}">
+                Dashboard
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <a class="breadcrumbs-list" th:href="@{/explorer}">Explore</a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <a class="breadcrumbs-list" th:href="@{/federalcorner}">Explore Details</a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <span class="breadcrumbs-list active">FederalCorner Details</span>
+        </div>
+        <div class="template-title">
+            <h2>FederalCorner Details</h2>
+        </div>
+        <hr>
+        <div class="explore-form-row">
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">DeeplinkUrl</label>
+                    <input type="text" name="DeeplinkUrl" id="DeeplinkUrl1" class="input-ctrl">
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Is Internal</label>
+                    <select name="isInternal" id="isInternal1" required class="select-ctrl">
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Page Type</label>
+                    <input type="text" id="pageType1" class="input-ctrl">
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Title</label>
+                    <input type="text" class="input-ctrl" id="title1">
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Upload title icon</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="imgfile">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Upload Pdf</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="pdffile" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Upload Video</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="videofile" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Upload Image</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="imagefile" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="explore-form-col span-2">
+                <div class="button-row">
+                    <button class="btn-1"type="reset"  onclick="clearFederal()">Clear</button>
+                    <!--                    <button class="btn-2" onclick="addFedCornerData()">Submit</button>-->
+                    <button class="btn-2" onclick="addNewConer()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/addNewCorner.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

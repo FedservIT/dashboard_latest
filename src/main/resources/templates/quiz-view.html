@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-Quiz View</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" href="dashboard.html">
+                Dashboard
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <span class="breadcrumbs-list active">Quiz</span>
+        </div>
+        <div class="template-title">
+            <h2>Quiz</h2>
+            <!--            <div class="title-ctrl">-->
+            <!--                <a href="explore-single.html" class="add-btn">-->
+            <!--                    <ion-icon name="add-outline"></ion-icon>-->
+            <!--                    Create Quiz-->
+            <!--                </a>-->
+            <!--            </div>-->
+        </div>
+        <hr class="mb-10">
+        <div class="quiz-title-card-row mb-15">
+            <div class="quiz-title-card">
+                <h4 id="quiztitile"></h4>
+                <strong id="quizinfo"></strong>
+                <p id="quizdescription"></p>
+            </div>
+            <div class="quiz-status">
+                <h4>Quiz Winners</h4>
+                <div class="quiz-status-row">
+                    <div class="quiz-status-col">
+                        <b class="mb-15">First Winner</b>
+                        <figure>
+                            <img  id="img1stWinner">
+                        </figure>
+                        <strong id="name1stWinner"></strong>
+                        <p id="pfNum1stWinner"></p>
+                    </div>
+                    <div class="quiz-status-col">
+                        <b class="mb-15">Second Winner</b>
+                        <figure>
+                            <img id="img2ndWinner">
+                        </figure>
+                        <strong id="name2ndWinner"></strong>
+                        <p id="pfNum2ndWinner"></p>
+                    </div>
+                    <div class="quiz-status-col">
+                        <b class="mb-15">Third Winner</b>
+                        <figure>
+                            <img id="img3rdWinner">
+                        </figure>
+                        <strong id="name3rdWinner"></strong>
+                        <p id="pfNum3rdWinner"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="participant-row">
+            <div class="template-title">
+                <h3>Quiz Participants</h3>
+            </div>
+            <hr class="mb-15">
+            <div class="history-table">
+                <div class="table-row mb-15" id="scorelist">
+                    <table id="table">
+                        <thead>
+                        <tr>
+                            <th style="width: 80px">SL.No</th>
+                            <th>Employe ID</th>
+                            <th style="width: 75px">Score</th>
+                            <th style="width: 200px">Select Winner</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="template-title">
+            <h3>Questions</h3>
+        </div>
+        <hr class="mb-15">
+        <div class="view-quiz-row" id="view-quiz-row">
+            <!--                    <div class="view-list active" id="view-quiz">-->
+            <!--                        <div class="quiz-view-title" id="view-quiz2">-->
+            <!--                            <strong>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quos culpa omnis!</strong>-->
+            <!--                            <div class="control-row" id="view-quiz3">-->
+            <!--                                <ion-icon name="chevron-down-outline"></ion-icon>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        <div class="quiz-answer-view" id="view-quiz4">-->
+            <!--                            <p class="answer-list"id="option1"> 1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list active"id="option2">2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list" id="option3"> 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list" id="option4">4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+
+            <!--                    <div class="view-list">-->
+            <!--                        <div class="quiz-view-title">-->
+            <!--                            <strong>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong>-->
+            <!--                            <div class="control-row">-->
+            <!--                                <ion-icon name="chevron-down-outline"></ion-icon>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        <div class="quiz-answer-view">-->
+            <!--                            <p class="answer-list"> 1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list active">2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list"> 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list">4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="view-list" id="quizview">-->
+            <!--                        <div class="quiz-view-title">-->
+            <!--                            <strong>3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong>-->
+            <!--                            <div class="control-row">-->
+            <!--                                <ion-icon name="chevron-down-outline"></ion-icon>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        <div class="quiz-answer-view">-->
+            <!--                            <p class="answer-list"> 1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list active">2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list"> 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list">4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="view-list">-->
+            <!--                        <div class="quiz-view-title">-->
+            <!--                            <strong>4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong>-->
+            <!--                            <div class="control-row">-->
+            <!--                                <ion-icon name="chevron-down-outline"></ion-icon>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        <div class="quiz-answer-view">-->
+            <!--                            <p class="answer-list"> 1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list active">2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list"> 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list">4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="view-list">-->
+            <!--                        <div class="quiz-view-title">-->
+            <!--                            <strong>5. Lorem ipsum dolor sit amet consectetur adipisicing elit.</strong>-->
+            <!--                            <div class="control-row">-->
+            <!--                                <ion-icon name="chevron-down-outline"></ion-icon>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                        <div class="quiz-answer-view">-->
+            <!--                            <p class="answer-list"> 1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list active">2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list"> 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                            <p class="answer-list">4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+        </div>
+        <div class="modal-widgrt" id="winner-modal">
+            <div class="modal-row quiz">
+                <h2 id="winner-title"></h2>
+                <p class="mb-15">Declare the Participant us Winner</p>
+                <strong>Name: <b id="winner-name"></b></strong>
+                <strong>Employee ID: <b id="winner-id"></b></strong>
+                <input type="text" id="winEmpId" style="display: none;">
+                <input type="text" id="winEmpName" style="display: none;">
+                <input type="text" id="winEmpImg" style="display: none;">
+                <div class="button-row">
+                    <span class="btn-1 sm-btn" id="clodeModal">Cancel</span>
+                    <button class="btn-2 sm-btn" id="confirm-winner1">Confirm First Winner</button>
+                    <button class="btn-2 sm-btn" id="confirm-winner2">Confirm Second Winner</button>
+                    <button class="btn-2 sm-btn" id="confirm-winner3">Confirm Third Winner</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../script/quizFetch.js" type="text/javascript"></script>
+<!--<script src="../script/quiz_view.js" type="text/javascript"></script>-->
+</div>
+</body>
+</html>

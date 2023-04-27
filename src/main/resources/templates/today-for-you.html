@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-DashBoard</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" href="dashboard.html">
+                Dashboard
+            </a>
+        </div>
+        <div class="template-title">
+            <h2>Today For You</h2>
+        </div>
+
+        <hr>
+
+<!--        <div class="explore-form-row">-->
+
+<!--            <div class="form-row">-->
+<!--                <label class="ctrl-label">Collection Name[excel Upload]</label>-->
+<!--                <select name="isInternal" id="collname" required class="select-ctrl">-->
+<!--                    <option value="quotes">quotes</option>-->
+<!--                    <option value="didyouknow">didyouknow</option>-->
+<!--                    <option value="trivia">trivia</option>-->
+<!--                    <option value="word_a_day">word_a_day</option>-->
+<!--                    <option value="jokes">jokes</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="explore-form-col">-->
+<!--                <div class="form-row icon-ctrl">-->
+<!--                    <label class="ctrl-label">Select File</label>-->
+<!--                    <div class="file-input">-->
+<!--                        <input type="file" class="input-ctrl" id="todayImage">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="explore-form-col span-2">-->
+<!--                <div class="button-row ">-->
+<!--&lt;!&ndash;                    <button class="btn-1">Clear</button>&ndash;&gt;-->
+<!--                    <button class="btn-2" onclick="addTodayForYou()">Submit</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    <div class="explore-form-row">
+
+
+        <div class="explore-form-col">
+            <div class="form-row">
+                <label class="ctrl-label">Collection Name</label>
+                <select name="isInternal" id="collname1" required class="select-ctrl">
+                    <option value="quotes">quotes</option>
+                    <option value="didyouknow">didyouknow</option>
+                    <option value="trivia">trivia</option>
+                    <option value="word_a_day">word_a_day</option>
+                    <option value="jokes">jokes</option>
+                </select>
+            </div>
+        </div>
+        <div class="explore-form-col">
+            <div class="form-row">
+                <label class="ctrl-label">Date</label>
+                <input type="date" class="input-ctrl" id="todaydate">
+            </div>
+        </div>
+
+        <div class="explore-form-col">
+            <div class="form-row icon-ctrl">
+                <label class="ctrl-label">Title</label>
+                <input type="text" class="input-ctrl" id="title1">
+            </div>
+        </div>
+        <div class="explore-form-col">
+            <div class="form-row icon-ctrl">
+                <label class="ctrl-label">Content</label>
+                <input type="text" class="input-ctrl" id="data1">
+            </div>
+        </div>
+
+        <div class="explore-form-col span-2">
+            <div class="button-row ">
+                <!--                    <button class="btn-1">Clear</button>-->
+                <button class="btn-2" onclick="todayForYou()">Submit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="../script/today_for_you.js" type="text/javascript" defer></script>
+</div>
+</body>
+</html>

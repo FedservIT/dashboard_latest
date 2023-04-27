@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script/quiz_view.js" type="text/javascript" defer></script>
+    <title>Pusle-Quiz View</title>
+</head>
+<body>
+    <div class="template-container" layout:fragment="content">
+        <div class="content-row">
+            <div class="template-head">
+                <a class="breadcrumbs-list" href="dashboard.html">
+                    Dashboard
+                </a>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <span class="breadcrumbs-list active">
+                    Quiz
+                </span>
+            </div>
+            <div class="template-title">
+                <h2>Quiz</h2>
+                <div class="title-ctrl">
+                    <a href="/quiz-add" class="add-btn">
+                        <ion-icon name="add-outline"></ion-icon>
+                        Create Quiz
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="table-row" id="quiz_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SL No</th>
+                            <th>QID</th>
+                            <th>Date</th>
+                            <th style="width: 100px;">View</th>
+                    </thead>
+                    <tbody>
+<!--                        <tr>-->
+<!--                            <td>1</td>-->
+<!--                            <td>123456</td>-->
+<!--                            <td>21.05.2022</td>-->
+<!--                            <td>-->
+<!--                                <a href="#" class="view-btn">-->
+<!--                                    <ion-icon name="eye-outline"></ion-icon>-->
+<!--                                    View-->
+<!--                                </a>-->
+<!--                            </td>-->
+<!--                            <td> <a href="#" class="toggle-btn">-->
+<!--                                <input id="status" type="checkbox" name="answertypeq_1">-->
+
+<!--                            </a></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>2</td>-->
+<!--                            <td>123456</td>-->
+<!--                            <td>21.05.2022</td>-->
+<!--                            <td>-->
+<!--                                <a href="/quiz-view" class="view-btn">-->
+<!--                                    <ion-icon name="eye-outline"></ion-icon>-->
+<!--                                    View-->
+<!--                                </a>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

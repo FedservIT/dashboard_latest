@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-Explore</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" th:href="@{/}">
+                Dashboard
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <a class="breadcrumbs-list" th:href="@{/explorer}">Explore</a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <span class="breadcrumbs-list active">Explore Details</span>
+        </div>
+        <div class="template-title">
+            <h2>Explore Details</h2>
+        </div>
+        <hr>
+
+
+        <div class="explore-form-row">
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Document Name</label>
+                    <input type="text" name="docName" id="docName" class="input-ctrl">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Upload Image</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="inputfile" onchange="uploadImage()">
+                    </div>
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="check" id="check">
+                    <div class="form-row icon-ctrl">
+                        <label class="ctrl-label">Deeplink Url</label><br>
+                        <input type="checkbox" class="check-label" id="chk">
+                        <label class="ctrl-label">File upload</label>
+                        <input type="file" class="input-ctrl" id="inputfile1" onchange="uploadUrlImage()">
+                        <div>
+                            <input type="checkbox" class="check-label" id="chk1">
+                            <label class="ctrl-label">URL</label>
+                            <input type="text" id="url" class="input-ctrl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Is Internal</label>
+                    <select name="isInternal" id="isInternal" required class="select-ctrl">
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Menu Type</label>
+                    <select name="MenuType" id="MenuType" required class="select-ctrl">
+                        <option value="internal">internal</option>
+                        <option value="external">external</option>
+                    </select>
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Page Name</label>
+                    <input type="text" id="pagename" class="input-ctrl">
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Text</label>
+                    <input type="text" class="input-ctrl" id="text">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Tile Type</label>
+                    <select name="MenuType" id="TileType" required class="select-ctrl">
+                        <option value="html">html</option>
+                        <option value="pdf">pdf</option>
+                        <option value="jpeg">jpeg</option>
+                        <option value="url">url</option>
+                        <option value="internal">internal</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="explore-form-col span-2">
+                <div class="button-row">
+                    <button class="btn-1" type="reset" onclick="clearExploreData()">Clear</button>
+                    <button class="btn-2" onclick="addExploreData()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/explore-add.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

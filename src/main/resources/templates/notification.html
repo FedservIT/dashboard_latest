@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" th:href="@{/}">
+                Dashboard
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <span class="breadcrumbs-list active">Notifications</span>
+        </div>
+        <div class="template-title">
+            <h2>Notifications</h2>
+        </div>
+        <hr>
+        <div class="explore-form-row">
+            <div class="explore-form-col span-2">
+                <div class="form-row">
+                    <label class="ctrl-label">Title</label>
+                    <input type="text" name="title" id="title" class="input-ctrl">
+                </div>
+            </div>
+            <div class="explore-form-col span-2 mb-15">
+                <div class="form-row">
+                    <label class="ctrl-label">Message</label>
+                    <textarea class="text-ctrl" id="msg"></textarea>
+                </div>
+            </div>
+            <div class="explore-form-col span-2">
+                <div class="button-row">
+                    <!--                    <button class="btn-1">Create Group</button>-->
+                    <button class="btn-1" onclick="send_notification()">Boardcast All</button>
+                    <!--                    <button class="btn-2" onclick="addExploreData()">Submit</button>-->
+                </div>
+            </div>
+        </div>
+        <div class="table-row">
+            <table>
+                <thead>
+                <tr>
+                    <th style="width: 65px;">SL No</th>
+                    <th style="width: 135px;">PF ID</th>
+                    <th>Employee Name</th>
+                    <th style="width: 100px;">Select</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>10004</td>
+                    <td>
+                        <span class="table-content">Vivek K.S</span>
+                    </td>
+                    <td>
+                        <div class="table-btn-row">
+                            <div class="check" id="check">
+                                <input type="checkbox" class="check-label" id="chk">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../script/notification.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

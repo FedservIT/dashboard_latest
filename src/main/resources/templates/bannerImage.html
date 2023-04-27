@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-DashBoard</title>
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" href="dashboard.html">
+                Dashboard
+            </a>
+        </div>
+        <div class="template-title">
+            <h2> Home Screen Banner</h2>
+        </div>
+        <hr>
+
+        <div class="explore-form-row">
+        <div class="explore-form-col">
+            <div class="form-row">
+                <label class="ctrl-label">Date</label>
+                <input type="date" class="input-ctrl" id="bannerDate">
+            </div>
+        </div>
+        <div class="explore-form-col">
+            <div class="form-row icon-ctrl">
+                <label class="ctrl-label">Select Image</label>
+                <div class="file-input">
+                    <input type="file" class="input-ctrl" id="homeImage">
+                </div>
+            </div>
+        </div>
+        <div class="explore-form-col span-2">
+            <div class="button-row ">
+                <button class="btn-1">Clear</button>
+                <button class="btn-2" id="form-submit"onclick="addhomeScreen()">Submit</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script src="../script/banner.js" type="text/javascript" defer></script>
+ </div>
+</body>
+</html>

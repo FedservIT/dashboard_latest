@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-Dashboard</title>
+    <link rel="stylesheet" href="./">
+    <script src="../script/dashboard.js" type="text/javascript" ></script>
+
+
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row bg-gray pl-0 pr-0">
+        <div class="template-title">
+            <h2>Dashboard</h2>
+        </div>
+        <hr class="mb-15">
+        <div class="dashboard-widget-1">
+            <div class="col-left">
+                <div class="col-title">
+                    <div class="content-col">
+                        <strong>CEO Speakers</strong>
+                        <p id="date"></p>
+                    </div>
+                    <div class="img-col">
+                        <a href="#" class="add-btn">View
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="ceo-speak-container">
+                    <div class="col-content">
+                        <div class="profile-img">
+                            <img src="../assets/ceo.jpg" alt="">
+                        </div>
+                        <div class="col-list">
+
+                        </div>
+                        <div class="col-list">
+
+                        </div>
+                    </div>
+                    <div class="col-ftr">
+                        <div class="name-col">
+                            <strong>Shyam Srinivasan</strong>
+                            <p>CEO</p>
+                        </div>
+                        <div class="btn-row">
+                            <a href="#" class="edit-btn">
+                                <ion-icon name="create-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="current-speak">
+                        <p id="ceomsg"></p>
+<!--                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit mollitia excepturi atque rerum impedit praesentium ex ipsam quos architecto, distinctio, quod nisi consequuntur natus ab libero. Eius, laboriosam ducimus! Dolores!</p>-->
+                    </div>
+                    <a href="/ceomessageEditor" class="create-btn">Add New CEO Speech
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="card-row">
+                    <div class="card-list">
+                        <div class="card-content">
+                            <strong>Reactions</strong>
+                            <ul>
+                                <li>
+                                        <span>
+                                            <img src="../assets/thumbs_up.png" alt="">
+                                        </span>
+                                    200
+                                </li>
+                                <li>
+                                        <span>
+                                            <img src="../assets/clapping.png" alt="">
+                                        </span>
+                                    100
+                                </li>
+                                <li>
+                                        <span>
+                                            <img src="../assets//love.png" alt="">
+                                        </span>
+                                    50
+                                </li>
+                                <li>
+                                        <span>
+                                            <img src="../assets//support.png" alt="">
+                                        </span>
+                                    300
+                                </li>
+                                <li>
+                                        <span>
+                                            <img src="../assets//curious.png" alt="">
+                                        </span>
+                                    2
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                        <div class="commend-widget">
+                            <div class="card-content">
+                                <strong id="views"></strong>
+                                <p>Views</p>
+                            </div>
+                            <div class="card-icon">
+                                    <span>
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                        <div class="commend-widget">
+                            <div class="card-content">
+                                <strong>345</strong>
+                                <p>Comments</p>
+                            </div>
+                            <div class="card-icon">
+                                    <span>
+                                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <canvas id="myChart" class="chart-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="history-table" id="ceoMsgHis">
+            <table cellpadding="0" cellspacing="0" id="table1">
+                <thead>
+                <tr>
+                    <th style="width: 50px;">SL No</th>
+                    <th>Date</th>
+                    <th>CEO Message</th>
+                    <th>Reaction</th>
+                    <th>View</th>
+                    <th>Comments</th>
+                    <th style="width:90px;"></th>
+                </tr>
+                </thead>
+<!--                <tbody>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">1</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">11 May 2022</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">200</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">950</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">345</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <a class="view-btn" href="#">-->
+<!--                            <ion-icon name="link-outline"></ion-icon>-->
+<!--                            View-->
+<!--                        </a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">2</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">11 May 2022</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">200</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">950</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">345</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <a class="view-btn" href="#">-->
+<!--                            <ion-icon name="link-outline"></ion-icon>-->
+<!--                            View-->
+<!--                        </a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">3</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">11 May 2022</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="table-text">Lorem ipsum dolor sit amet consectetur adipisicing elit...</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">200</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">950</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <span class="badge-label">345</span>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <a class="view-btn" href="#">-->
+<!--                            <ion-icon name="link-outline"></ion-icon>-->
+<!--                            View-->
+<!--                        </a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+            </table>
+        </div>
+    </div>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: '# of Votes',
+                data: [200, 199, 900, 800, 1010, 390, 200, 199, 900, 800, 1010, 390],
+                backgroundColor: "#004e96",
+                borderColor: "#004e96",
+                borderWidth: 0,
+                barThickness: 12,  // number (pixels) or 'flex'
+                maxBarThickness: 12 // number (pixels)
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                    }
+                },
+                y: {
+                    grid: {
+                        // display: false
+
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    cornerRadius: 0,
+                    caretSize: 0,
+                    padding: 2,
+                    backgroundColor: '#d4dbf9',
+                    borderColor: "#d4dbf9",
+                    borderWidth: 1,
+                    bodyFontColor: "#ccc",
+                    titleFontColor: "#004e96",
+                    titleMarginBottom: 4,
+                    labelColor: "#000",
+                    titleFont: {
+                        "weight": "400",
+                        "size": 14,
+                        "color": "#004e96"
+                    }
+                }
+            }
+        }
+    });
+</script>
+<div>
+
+</div>
+
+
+</body>
+</html>

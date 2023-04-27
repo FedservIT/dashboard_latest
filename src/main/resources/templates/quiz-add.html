@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-Quiz</title>
+   <script src="../script/quiz_add.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="template-container" layout:fragment="content">
+        <div class="content-row">
+            <div class="template-head">
+                <a class="breadcrumbs-list" href="dashboard.html">
+                    Dashboard
+                </a>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <a class="breadcrumbs-list" href="quiz.html">
+                    Add Quiz
+                </a>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <span class="breadcrumbs-list active">
+                    Quiz
+                </span>
+            </div>
+            <div class="template-title" >
+                <h2>Create Quiz</h2>
+<!--                <div class="title-ctrl">-->
+<!--                    <a href="explore-single.html" class="add-btn">-->
+<!--                        <ion-icon name="add-outline"></ion-icon>-->
+<!--                        Add Question-->
+<!--                    </a>-->
+<!--                </div>-->
+            </div>
+            <hr>
+            <div class="quiz-title-widget">
+                <div class="quiz-title-list">
+                    <div class="form-row">
+                        <label class="ctrl-label">Quiz title</label>
+                        <input type="text" class="input-ctrl" id="title">
+                    </div>
+                </div>
+                <div class="quiz-title-list">
+                    <div class="form-row">
+                        <label class="ctrl-label">Information</label>
+                        <input type="text" class="input-ctrl" id="information">
+                    </div>
+                </div>
+                 <div class="quiz-title-list span-2">
+                    <div class="form-row">
+                        <label class="ctrl-label">Quiz Content</label>
+                        <textarea class="text-ctrl" id="content"></textarea>
+                    </div>
+                    <div class="button-row">
+                        <button class="btn-2" onclick="addQuizInfo()">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="quiz-card-row">
+                <div class="template-title mb-15">
+                    <h2>Add Questions</h2>
+                </div>
+                <!-- QUIZ LIST -->
+                <div class="quiz-card-list" id="newquizform">
+                <div class="quiz-card-list" id="quizForm">
+                    <div class="form-row mb-10">
+                        <div class="label-row mb-10">
+                            <label class="ctrl-label"><span></span>Question</label>
+<!--                            <button class="delete-question">-->
+<!--                                <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 112h352"></path><path d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>-->
+<!--                            </button>-->
+                        </div>
+                        <input type="text" class="input-ctrl" id="question_0">
+                    </div>
+                    <div class="answer-row">
+                        <div class="form-row">
+                            <label class="ctrl-label">Date</label>
+                            <input type="date" class="input-ctrl" id="quizDate">
+                        </div>
+                    </div>
+                    <div class="answer-row">
+                        <div class="answer-list">
+                            <div class="sl-no">1</div>
+                            <div class="form-row ">
+                                <input type="text" class="input-ctrl" id="option1_0">
+                            </div>
+                            <div class="answer-ctrl">
+                                <div class="check-box ">
+                                    <div class="toggle-btn">
+                                        <input id="anser_1_0" type="radio" name="answertypeq_1">
+                                        <label for="anser_1_0"></label>
+                                    </div>
+                                    <label>True</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="answer-list">
+                            <div class="sl-no">2</div>
+                            <div class="form-row ">
+                                <input type="text" class="input-ctrl" id="option2_0">
+                            </div>
+                            <div class="answer-ctrl">
+                                <div class="check-box ">
+                                    <div class="toggle-btn">
+                                        <input id="anser_2_0" type="radio" name="answertypeq_1">
+                                        <label for="anser_2_0"></label>
+                                    </div>
+                                    <label>True</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="answer-list">
+                            <div class="sl-no">3</div>
+                            <div class="form-row ">
+                                <input type="text" class="input-ctrl" id="option3_0">
+                            </div>
+                            <div class="answer-ctrl">
+                                <div class="check-box ">
+                                    <div class="toggle-btn">
+                                        <input id="anser_3_0" type="radio" name="answertypeq_1">
+                                        <label for="anser_3_0"></label>
+                                    </div>
+                                    <label>True</label>
+                                </div>
+                            </div>
+                        </div>
+<!--                        <div class="answer-list">-->
+<!--                            <div class="sl-no">4</div>-->
+<!--                            <div class="form-row ">-->
+<!--                                <input type="text" class="input-ctrl" id="option4_0">-->
+<!--                            </div>-->
+<!--                            <div class="answer-ctrl">-->
+<!--                                <div class="check-box ">-->
+<!--                                    <div class="toggle-btn">-->
+<!--                                        <input id="anser_4_0" type="radio" name="answertypeq_1">-->
+<!--                                        <label for="anser_4_0"></label>-->
+<!--                                    </div>-->
+<!--                                    <label>True</label>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+
+
+                <div class="quiz-submit">
+
+
+                    <div class="button-row">
+                        <button class="btn-1"  onclick="addNewCard()">AddNew</button>
+                        <button class="btn-2" onclick="addQuizData()">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+
+</script>
+
+</body>
+</html>

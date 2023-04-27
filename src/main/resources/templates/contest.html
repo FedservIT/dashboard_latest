@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusle-Explore</title>
+    <style>
+        .modal-widgrt{
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal-widgrt.show-c{
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+        }
+    </style>
+
+</head>
+<body>
+<div class="template-container" layout:fragment="content">
+    <div class="content-row">
+        <div class="template-head">
+            <a class="breadcrumbs-list" href="dashboard.html">
+                Dashboard
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <a class="breadcrumbs-list" href="explore.html">
+                Explore
+            </a>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <span class="breadcrumbs-list active">
+                        Contest Details
+                    </span>
+        </div>
+        <div class="template-title">
+            <h2> Contest Details...</h2>
+        </div>
+        <hr>
+        <div class="explore-form-row mb-15" id="contestForm">
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Department</label>
+                    <input type="text" class="input-ctrl" id="Department">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Form Url</label>
+                    <input type="text" class="input-ctrl" id="FormUrl">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row icon-ctrl">
+                    <label class="ctrl-label">Image Url</label>
+                    <div class="file-input">
+                        <input type="file" class="input-ctrl" id="contestimagUrl" onchange="uploadImage2()" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Description</label>
+                    <input type="text" class="input-ctrl" id="Description">
+
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">End Date</label>
+                    <input type="text" class="input-ctrl" id="EndDate">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Title</label>
+                    <input type="text" class="input-ctrl" id="Title">
+                </div>
+            </div>
+            <div class="explore-form-col">
+                <div class="form-row">
+                    <label class="ctrl-label">Start Date</label>
+                    <input type="text" class="input-ctrl" id="StartDate">
+                </div>
+            </div>
+            <div class="explore-form-col span-2">
+                <div class="button-row">
+                    <button class="btn-1"  >Cancel</button>
+                    <button class="btn-2" id="form-submit" onclick="addContestData()">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    <div class="modal-widgrt" id="modal-widgrt">
+        <div class="modal-row">
+            <h2>Deleting</h2>
+            <p>Do you want to delete Document?</p>
+            <div class="button-row">
+                <button class="btn-1" id="closeButton1">Close</button>
+                <button class="btn-2" id="deleteButton1">Delete</button>
+            </div>
+        </div>
+      </div>
+        <script src="../script/contest.js" type="text/javascript" defer></script>
+
+       </div>
+</div>
+</body>
+</html>
